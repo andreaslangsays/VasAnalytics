@@ -30,6 +30,33 @@ class Statistics extends ModelEntity
     private $name;
 
     /**
+     * SessionId - stores session Id
+     * 
+     * @var string $sessionId
+     * 
+     * @ORM\Column(name="sessionId", type="string", nullable=false)
+     */
+    private $sessionId;
+
+    /**
+     * ControllerPath - controller path including action
+     * 
+     * @var string $controllerPath
+     * 
+     * @ORM\Column(name="controllerPath", type="string", nullable=false)
+     */
+    private $controllerPath;
+
+    /**
+     * userId - stores user ID
+     * 
+     * @var string $userId
+     * 
+     * @ORM\Column(name="userId", type="string", nullable=false)
+     */
+    private $userId;
+
+    /**
      * @return int
      */
     public function getId()
@@ -52,4 +79,36 @@ class Statistics extends ModelEntity
     {
         $this->name = $name;
     }
+    
+    /**
+     * @return string
+     */
+    public function getSessionId()
+    {
+        return $this->sessionId;
+    }
+    /**
+     * @param $sessionId string
+     */
+    public function setSessionId($sessionId)
+    {
+        $this->sessionId = $sessionId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getControllerPath()
+    {
+        return $this->controllerPath;
+    }
+    /**
+     * @param $controllerPath string
+     */
+    public function setControllerPath($controllerPath)
+    {
+        $this->controllerPath = $controllerPath;
+    }
+
+    
 }
